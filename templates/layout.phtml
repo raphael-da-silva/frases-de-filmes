@@ -6,16 +6,28 @@
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <link rel="stylesheet" href="/assets/css/style.css">
-        <title>Frases de filme</title>
+        <title>Frases de filmes</title>
     </head>
 
     <body class="wrapper">
-        <header class="header bg-dark">
-            Frases de filme
-        </header>
 
-        <div class="content">
-            <?php echo $content; ?>
+        <div class="ct-align-center text-center">
+            <header class="header p-3 bg-dark text-white">
+                <h2>
+                    Frases de filmes
+                </h2>
+            </header>
+
+            <div class="jumbotron">
+                <?php echo $content; ?>
+
+                <hr>
+
+                <div>
+                    Desenvolvido por 
+                    <a href="https://github.com/raphael-da-silva">Raphael da Silva</a>
+                </div>
+            </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
