@@ -1,0 +1,32 @@
+{
+    "name": "slim/frases-de-filme",
+    "description": "Site para mostrar frases de filme.",
+    "authors": [
+        {
+            "name": "Raphael da Silva"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "slim/slim": "^3.1",
+        "slim/php-view": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=7.2",
+        "phpstan/phpstan": "^0.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "FrasesDeFilme\\": "./src/FrasesDeFilme"
+        }
+    },
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true
+    },
+    "scripts": {
+        "serve": "php -S localhost:8080 -t public",
+        "test": "phpunit --colors=always",
+        "phpstan": "phpstan analyse ./src/ --level 5",
+    }
+}

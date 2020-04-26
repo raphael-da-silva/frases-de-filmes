@@ -1,0 +1,11 @@
+<phpunit bootstrap="vendor/autoload.php">
+	<php>
+		<const name="APP_ROOT" value="./"></const>
+	</php>
+
+    <testsuites>
+        <testsuite name="AppClassesTestSuite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

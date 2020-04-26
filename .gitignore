@@ -1,0 +1,14 @@
+# Diretórios
+/vendor/
+/logs/*
+/var/
+/public/assets/libs/
+/public/assets/lib/
+/etc/
+
+# Arquivos
+!/logs/README.md
+composer.lock
+TODO.txt
+.phpunit.result.cache
+.env
