@@ -3,6 +3,7 @@
 namespace MoviesQuotes;
 
 use MoviesQuotes\QuoteProvider;
+use MoviesQuotes\Quote;
 
 /**
  *
@@ -12,13 +13,25 @@ use MoviesQuotes\QuoteProvider;
 class ArrayMovieQuoteProvider implements QuoteProvider
 {
 
-	public function getRandomQuote()
+	private function readQuoteFromFile()
 	{
 
 		$quotes = require APP_ROOT . '/var/quotes.php';
 		$quote  = $quotes[array_rand($quotes)];
 
 		return $quote;
+
+	}
+
+	public function getRandomQuote(): Quote
+	{
+
+		$quote = $this->readQuoteFromFile();
+
+		return new Quote(
+			$quote['quote'],
+			$quote['movie']
+		);
 
 	}
 

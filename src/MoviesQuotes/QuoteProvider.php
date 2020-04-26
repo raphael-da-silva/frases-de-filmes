@@ -10,6 +10,6 @@ namespace MoviesQuotes;
 interface QuoteProvider
 {
 
-	public function getRandomQuote();
+	public function getRandomQuote(): Quote;
 
 }
