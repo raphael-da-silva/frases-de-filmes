@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "FrasesDeFilme\\": "./src/FrasesDeFilme"
+            "MoviesQuotes\\": "./src/MoviesQuotes"
         }
     },
     "config": {
@@ -27,6 +27,6 @@
     "scripts": {
         "serve": "php -S localhost:8080 -t public",
         "test": "phpunit --colors=always",
-        "phpstan": "phpstan analyse ./src/ --level 5",
+        "phpstan": "phpstan analyse ./src/ --level 5"
     }
 }

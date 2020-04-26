@@ -1,7 +1,6 @@
 # Diretórios
 /vendor/
 /logs/*
-/var/
 /public/assets/libs/
 /public/assets/lib/
 /etc/

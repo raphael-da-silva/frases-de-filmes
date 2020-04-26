@@ -19,7 +19,9 @@ return function(App $app, Container $di, array $settings){
 
 	$app->get('/', function(Request $request, Response $response){
 
-		return $this['Renderer']->render($response, 'index.phtml', []);
+		return $this['Renderer']->render($response, 'index.phtml', [
+			'quote' => $this['MovieQuoteProvider']->getRandomQuote()
+		]);
 
 	});
 

@@ -5,6 +5,12 @@ use Slim\Container;
 
 return function(App $app, Container $di, array $settings){
 
+    $di['MovieQuoteProvider'] = function($di){
+
+        return new \MoviesQuotes\ArrayMovieQuoteProvider;
+
+    };
+
     /**
      *
      * View
