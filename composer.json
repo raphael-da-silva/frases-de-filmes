@@ -3,7 +3,8 @@
     "description": "Site para mostrar frases de filme.",
     "authors": [
         {
-            "name": "Raphael da Silva"
+            "name": "Raphael da Silva",
+            "homepage": "https://raphael-da-silva.github.io/"
         }
     ],
     "require": {
@@ -27,6 +28,6 @@
     "scripts": {
         "serve": "php -S localhost:8080 -t public",
         "test": "phpunit --colors=always",
-        "phpstan": "phpstan analyse ./src/ --level 5"
+        "phpstan": "phpstan analyse ./src/MoviesQuotes --level 5"
     }
 }
