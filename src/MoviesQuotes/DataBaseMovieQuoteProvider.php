@@ -4,7 +4,7 @@ namespace MoviesQuotes;
 
 use MoviesQuotes\QuoteProvider;
 use MoviesQuotes\Quote;
-use PDO;
+use PDO as DataBase;
 
 /**
  *
@@ -14,13 +14,13 @@ use PDO;
 class DataBaseMovieQuoteProvider implements QuoteProvider
 {
 
-	private $pdo;
+	private $db;
 
 	public function __construct(
-		PDO $pdo
+		DataBase $db
 	){
 
-		$this->pdo = $pdo;
+		$this->db = $db;
 
 	}
 
