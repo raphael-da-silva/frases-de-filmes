@@ -31,9 +31,12 @@ return function(App $app, Container $di, array $settings){
      * Route actions
      *
      */
-    $di[''] = function($di){
+    $di['HomeAction'] = function($di){
 
-        
+        return new \MoviesQuotes\HomeAction(
+            $di['MovieQuoteProvider'],
+            $di['Renderer']
+        );
 
     };
     
