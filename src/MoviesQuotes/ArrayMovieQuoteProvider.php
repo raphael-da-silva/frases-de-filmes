@@ -13,7 +13,7 @@ use MoviesQuotes\Quote;
 class ArrayMovieQuoteProvider implements QuoteProvider
 {
 
-	private function readQuoteFromFile()
+	private function readArrayFromFile()
 	{
 
 		$quotes = require APP_ROOT . '/var/quotes.php';
@@ -26,7 +26,7 @@ class ArrayMovieQuoteProvider implements QuoteProvider
 	public function getRandomQuote(): Quote
 	{
 
-		$quote = $this->readQuoteFromFile();
+		$quote = $this->readArrayFromFile();
 
 		return new Quote(
 			$quote['quote'],
