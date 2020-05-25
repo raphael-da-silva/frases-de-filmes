@@ -5,7 +5,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use Slim\Container;
 
-return function(App $app, Container $di, array $settings){
+return static function(App $app, Container $di, array $settings){
 
     $di['notFoundHandler'] = function($di){
 

@@ -3,7 +3,7 @@
 use Slim\App;
 use Slim\Container;
 
-return function(App $app, Container $di, array $settings){
+return static function(App $app, Container $di, array $settings){
 
     $di['MovieQuoteProvider'] = function($di){
 
