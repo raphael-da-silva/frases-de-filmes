@@ -2,7 +2,7 @@
 
 ### Sobre este projeto
 
-Projeto para mostrar frases de filmes.
+Projeto para mostrar frases de filmes randomicamente em uma página.
 
 ### Informações
 
