@@ -1,6 +1,6 @@
 <?php
 
-namespace MoviesQuotes;
+namespace MoviesQuotes\Actions;
 
 use MoviesQuotes\QuoteProvider;
 use Slim\Views\PhpRenderer;

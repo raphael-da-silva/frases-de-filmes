@@ -5,6 +5,7 @@ namespace MoviesQuotes;
 use MoviesQuotes\QuoteProvider;
 use MoviesQuotes\Quote;
 use PDO as DataBase;
+use Exception as NotImplementedException;
 
 /**
  *
@@ -27,7 +28,7 @@ class DataBaseMovieQuoteProvider implements QuoteProvider
 	public function getRandomQuote(): Quote
 	{
 
-		// TODO: buscar frases de um banco de dados usando a PDO.
+		throw new NotImplementedException('buscar frases de um banco de dados usando a PDO.');
 
 	}
 

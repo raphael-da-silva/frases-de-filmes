@@ -33,7 +33,7 @@ return static function(App $app, Container $di, array $settings){
      */
     $di['HomeAction'] = function($di){
 
-        return new \MoviesQuotes\HomeAction(
+        return new \MoviesQuotes\Actions\HomeAction(
             $di['MovieQuoteProvider'],
             $di['Renderer']
         );
