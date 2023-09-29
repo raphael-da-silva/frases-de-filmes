@@ -14,27 +14,15 @@ use Slim\Http\Response;
  */
 class HomeAction
 {
-
-	private $quote;
-	private $view;
-
 	public function __construct(
-		QuoteProvider $quote,
-		PhpRenderer $view
-	){
-
-		$this->quote = $quote;
-		$this->view  = $view;
-
-	}
+		private QuoteProvider $quote,
+		private PhpRenderer $view
+	){}
 
 	public function __invoke(Request $request, Response $response): Response
 	{
-
 		return $this->view->render($response, 'index.phtml', [
 			'quote' => $this->quote->getRandomQuote()
 		]);
-
 	}
-
 }
