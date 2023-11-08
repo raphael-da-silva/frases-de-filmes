@@ -12,21 +12,43 @@ use MoviesQuotes\Quote;
  */
 class ArrayMovieQuoteProvider implements QuoteProvider
 {
+	private array $quotes;
+
+	public function __construct()
+	{
+		$this->quotes = require APP_ROOT . '/var/quotes.php';
+	}
+
 	private function readArrayFromFile(): array
 	{
-		$quotes = require APP_ROOT . '/var/quotes.php';
-		$quote  = $quotes[array_rand($quotes)];
-
+		$quote = $this->quotes[array_rand($this->quotes)];
 		return $quote;
+	}
+
+	private function createQuoteFromArray (array $quote): Quote
+	{
+		return new Quote(
+			$quote['quote'],
+			$quote['movie']
+		);
 	}
 
 	public function getRandomQuote(): Quote
 	{
 		$quote = $this->readArrayFromFile();
+		$quote = $this->createQuoteFromArray($quote);
+		
+		return $quote;
+	}
 
-		return new Quote(
-			$quote['quote'],
-			$quote['movie']
-		);
+	public function getAllQuotes(): array
+	{
+		$all = [];
+
+		foreach ($this->quotes as $quote){
+			$all[] = $this->createQuoteFromArray($quote);
+		}
+
+		return $all;
 	}
 }

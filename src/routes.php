@@ -4,6 +4,8 @@ use Slim\App;
 use Slim\Http\Request;
 use Slim\Http\Response;
 use Slim\Container;
+use MoviesQuotes\Actions\HomeAction;
+use MoviesQuotes\Actions\QuotesListAction;
 
 return static function(App $app, Container $di, array $settings){
 
@@ -17,6 +19,7 @@ return static function(App $app, Container $di, array $settings){
 
     };
 
-	$app->get('/', $di['HomeAction']);
+	$app->get('/', $di[HomeAction::class]);
+    $app->get('/list', $di[QuotesListAction::class]);
 
 };

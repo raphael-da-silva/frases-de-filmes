@@ -3,12 +3,15 @@
 use Slim\App;
 use Slim\Container;
 
+use MoviesQuotes\QuoteProvider;
+use Slim\Views\PhpRenderer;
+use MoviesQuotes\Actions\HomeAction;
+use MoviesQuotes\Actions\QuotesListAction;
+
 return static function(App $app, Container $di, array $settings){
 
-    $di['MovieQuoteProvider'] = function($di){
-
+    $di[QuoteProvider::class] = function($di){
         return new \MoviesQuotes\ArrayMovieQuoteProvider;
-
     };
 
     /**
@@ -16,14 +19,12 @@ return static function(App $app, Container $di, array $settings){
      * View
      *
      */
-    $di['Renderer'] = function($di) use ($settings){
-
-        return new \Slim\Views\PhpRenderer(
+    $di[PhpRenderer::class] = function($di) use ($settings){
+        return new PhpRenderer(
             $settings['renderer']['viewsPath'],
             [],
             $settings['renderer']['layout']
         );
-
     };
 
     /**
@@ -31,13 +32,18 @@ return static function(App $app, Container $di, array $settings){
      * Route actions
      *
      */
-    $di['HomeAction'] = function($di){
-
-        return new \MoviesQuotes\Actions\HomeAction(
-            $di['MovieQuoteProvider'],
-            $di['Renderer']
+    $di[HomeAction::class] = function($di){
+        return new HomeAction(
+            $di[QuoteProvider::class],
+            $di[PhpRenderer::class]
         );
+    };
 
+    $di[QuotesListAction::class] = function($di){
+        return new QuotesListAction(
+            $di[QuoteProvider::class],
+            $di[PhpRenderer::class]
+        );
     };
     
 };

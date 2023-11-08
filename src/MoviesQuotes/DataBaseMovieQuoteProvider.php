@@ -20,6 +20,11 @@ class DataBaseMovieQuoteProvider implements QuoteProvider
 
 	public function getRandomQuote(): Quote
 	{
-		throw new NotImplementedException('buscar frases de um banco de dados usando a PDO.');
+		throw new NotImplementedException('buscar frase de um banco de dados usando a PDO.');
+	}
+
+	public function getAllQuotes(): array
+	{
+		throw new NotImplementedException('buscar as frases de um banco de dados usando a PDO.');
 	}
 }
